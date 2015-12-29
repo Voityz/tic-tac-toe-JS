@@ -1,4 +1,4 @@
-# tic tac toe JS game
+# Tic tac toe JS game
 A Simple 2-player tic tac toe game created using Javascript (jQuery), made for fun and js practice.
 Game logic is inside *index.html*
 
