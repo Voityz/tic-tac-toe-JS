@@ -1,0 +1,188 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+    * {margin: 0; padding: 0;}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+body { width: 600px; margin: 50px auto 100px; font-family: 'Roboto', "Myriad Pro"; font-size: 13px;}
+
+.tic-tac-toe {
+  width: 454px;
+  margin: 70px auto;
+}
+.grid {
+  height: 150px;
+  width: 150px;
+  float: left;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.grid[data-row="0"] {border-top: 0;}
+.grid[data-row="2"] {border-bottom: 0;}
+.grid[data-column="0"] {border-left: 0;}
+.grid[data-column="2"] {border-right: 0;}
+
+.grid.marked-x {
+  background: url('img/x.png') no-repeat center center;
+}
+.grid.marked-o {
+  background: url('img/o.png') no-repeat center center;
+}
+
+.warning {
+  background-color: #fbe1a0;
+  padding: 10px 0;
+  color: #8c7040;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+.warning.hide {
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+}
+.fixedToTop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.overlay, .start-overlay {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: rgba(255,255,255,0.7);
+  display: none;
+}
+.start-overlay {
+  display: block;
+  background: #f1f1f1;
+}
+
+.message, .start-message {
+  width: 400px;
+  position: fixed; top: 40%; left: 50%;
+  transform: translateX(-50%) translatey(-50%) scale(0);
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0);
+  background: #204156;
+  background: linear-gradient(to top, #204156, #297478);
+  color: #fff;
+  padding: 40px 20px 50px; text-align: center;
+  border-radius: 8px; -webkit-border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+.message {
+  transition: transform 0.3s ease, opacity 0.2s ease 0.1s;
+  -webkit-transition: transform 0.3s ease, opacity 0.2s ease 0.1s;
+  padding: 40px 20px 30px;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateX(-50%) translatey(-50%) scale(1);
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.message h2, .start-message h2 {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.theMessage {
+  font-size: 16px;
+  opacity: 0.85;
+  display: block;
+}
+.start-message {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  border-radius: 3px;
+  color: #666;
+  opacity: 1;
+  padding: 30px 0;
+  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  transform: translateX(-50%) translatey(-50%) scale(1);
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+  opacity: 1;
+}
+.start-message.hide {
+  transform: translateX(-50%) translatey(-50%) scale(1.1);
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1.1);
+  opacity: 0;
+}
+.lets-play {
+  margin-top: 20px;
+  background: #feac1a;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0 30px;
+  line-height: 44px; height: 44px;
+  display: inline-block; text-decoration: none !important;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+.lets-play:hover {
+  background: #f5a81e;
+}
+
+.playerName {
+  display: block;
+}
+
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.play-again {
+  color: #fff; text-decoration: none;
+  background: rgba(0,0,0,0.25); border-radius: 3px;
+  display: inline-block;
+  padding: 0 20px; height: 40px; line-height: 40px;
+  margin-top: 20px; font-size: 14px;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+.play-again:hover {
+  background: rgba(0,0,0,0.4);
+  padding: 0 28px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+}
+.footer a {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px solid #bbb;
+}
+.footer a:hover {
+  color: #000;
+  border-bottom: 1px solid #333;
+}
